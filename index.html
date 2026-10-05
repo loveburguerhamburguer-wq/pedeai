@@ -4,7 +4,8 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="theme-color" content="#7c3aed">
-<title>Pede.Comigo — Seu pedido, do seu jeito.</title>
+
+<title>Pede Comigo — Seu pedido, do seu jeito.</title>
 
 <style>
 *{
@@ -34,6 +35,7 @@ header{
   display:flex;
   justify-content:space-between;
   align-items:center;
+  gap:15px;
 }
 
 .logo{
@@ -301,12 +303,22 @@ footer{
 }
 
 @media(max-width:600px){
+
   .hero h1{
     font-size:28px;
   }
 
   .products{
     grid-template-columns:1fr;
+  }
+
+  .top{
+    flex-direction:column;
+    align-items:stretch;
+  }
+
+  .cart-btn{
+    width:100%;
   }
 }
 </style>
@@ -315,21 +327,37 @@ footer{
 <body>
 
 <header>
+
   <div class="top">
+
     <div>
-      <div class="logo">Pede<span>Aí</span></div>
-      <div class="slogan">Seu pedido, do seu jeito.</div>
+      <div class="logo">
+        Pede<span>Comigo</span>
+      </div>
+
+      <div class="slogan">
+        Seu pedido, do seu jeito.
+      </div>
     </div>
 
     <button class="cart-btn" onclick="abrirCarrinho()">
       🛒 Carrinho (<span id="contador">0</span>)
     </button>
+
   </div>
+
 </header>
 
+
 <section class="hero">
-  <h1>Encontre sua loja e faça seu pedido!</h1>
-  <p>Escolha seus produtos e peça de forma rápida e fácil.</p>
+
+  <h1>
+    Encontre sua loja e faça seu pedido!
+  </h1>
+
+  <p>
+    Escolha seus produtos e peça de forma rápida e fácil.
+  </p>
 
   <input
     class="search"
@@ -338,288 +366,216 @@ footer{
     placeholder="🔎 Procure uma loja ou produto..."
     oninput="buscar()"
   >
+
 </section>
+
 
 <main class="container">
 
-  <h2 class="section-title">🏪 Lojas em destaque</h2>
+  <h2 class="section-title">
+    🏪 Lojas em destaque
+  </h2>
+
 
   <section class="store">
 
     <div class="store-head">
-      <div class="store-logo">🍔</div>
+
+      <div class="store-logo">
+        🍔
+      </div>
 
       <div>
-        <h2>Love Burguer</h2>
-        <div class="status">● Aberto</div>
-        <small>Hambúrgueres • Lanches • Bebidas</small>
+
+        <h2>
+          Love Burguer
+        </h2>
+
+        <div class="status">
+          ● Aberto
+        </div>
+
+        <small>
+          Hambúrgueres • Lanches • Bebidas
+        </small>
+
       </div>
+
     </div>
+
 
     <div class="products" id="produtos">
 
+
       <div class="product" data-search="love burguer hambúrguer">
-        <h3>Love Burguer</h3>
-        <p>Pão, molho, alface, cebola, queijo, 3 carnes, ovo e bacon.</p>
-        <div class="price">Consulte o preço</div>
-        <button class="add" onclick="adicionar('Love Burguer',0)">
+
+        <h3>
+          Love Burguer
+        </h3>
+
+        <p>
+          Pão, molho, alface, cebola, queijo, 3 carnes, ovo e bacon.
+        </p>
+
+        <div class="price">
+          Consulte o preço
+        </div>
+
+        <button class="add"
+          onclick="adicionar('Love Burguer',0)">
           + Adicionar
         </button>
+
       </div>
+
 
       <div class="product" data-search="egge love ovo">
-        <h3>Egge Love</h3>
-        <p>Pão, molho, ovo, queijo, carne, cebola roxa e alface.</p>
-        <div class="price">Consulte o preço</div>
-        <button class="add" onclick="adicionar('Egge Love',0)">
+
+        <h3>
+          Egge Love
+        </h3>
+
+        <p>
+          Pão, molho, ovo, queijo, carne, cebola roxa e alface.
+        </p>
+
+        <div class="price">
+          Consulte o preço
+        </div>
+
+        <button class="add"
+          onclick="adicionar('Egge Love',0)">
           + Adicionar
         </button>
+
       </div>
+
 
       <div class="product" data-search="love bacon bacon">
-        <h3>Love Bacon</h3>
-        <p>Pão, molho cheddar, bacon, ovo, queijo, carne e alface.</p>
-        <div class="price">Consulte o preço</div>
-        <button class="add" onclick="adicionar('Love Bacon',0)">
+
+        <h3>
+          Love Bacon
+        </h3>
+
+        <p>
+          Pão, molho cheddar, bacon, ovo, queijo, carne e alface.
+        </p>
+
+        <div class="price">
+          Consulte o preço
+        </div>
+
+        <button class="add"
+          onclick="adicionar('Love Bacon',0)">
           + Adicionar
         </button>
+
       </div>
 
-      <div class="product" data-search="x-love x love milho">
-        <h3>X-Love</h3>
-        <p>Pão, molho, queijo, bacon, ovo, milho e carne.</p>
-        <div class="price">Consulte o preço</div>
-        <button class="add" onclick="adicionar('X-Love',0)">
+
+      <div class="product" data-search="x love milho">
+
+        <h3>
+          X-Love
+        </h3>
+
+        <p>
+          Pão, molho, queijo, bacon, ovo, milho e carne.
+        </p>
+
+        <div class="price">
+          Consulte o preço
+        </div>
+
+        <button class="add"
+          onclick="adicionar('X-Love',0)">
           + Adicionar
         </button>
+
       </div>
+
 
       <div class="product" data-search="love calabresa">
-        <h3>Love Calabresa</h3>
-        <p>Pão, molho, calabresa, queijo, carne e alface.</p>
-        <div class="price">Consulte o preço</div>
-        <button class="add" onclick="adicionar('Love Calabresa',0)">
+
+        <h3>
+          Love Calabresa
+        </h3>
+
+        <p>
+          Pão, molho, calabresa, queijo, carne e alface.
+        </p>
+
+        <div class="price">
+          Consulte o preço
+        </div>
+
+        <button class="add"
+          onclick="adicionar('Love Calabresa',0)">
           + Adicionar
         </button>
+
       </div>
+
 
       <div class="product" data-search="duplo love">
-        <h3>Duplo Love</h3>
-        <p>Pão, 2 carnes, queijo, molho cheddar, pickles e alface.</p>
-        <div class="price">Consulte o preço</div>
-        <button class="add" onclick="adicionar('Duplo Love',0)">
+
+        <h3>
+          Duplo Love
+        </h3>
+
+        <p>
+          Pão, 2 carnes, queijo, molho cheddar, pickles e alface.
+        </p>
+
+        <div class="price">
+          Consulte o preço
+        </div>
+
+        <button class="add"
+          onclick="adicionar('Duplo Love',0)">
           + Adicionar
         </button>
+
       </div>
+
 
       <div class="product" data-search="love simples">
-        <h3>Love Simples</h3>
-        <p>Pão, molho, alface, tomate e carne.</p>
-        <div class="price">Consulte o preço</div>
-        <button class="add" onclick="adicionar('Love Simples',0)">
+
+        <h3>
+          Love Simples
+        </h3>
+
+        <p>
+          Pão, molho, alface, tomate e carne.
+        </p>
+
+        <div class="price">
+          Consulte o preço
+        </div>
+
+        <button class="add"
+          onclick="adicionar('Love Simples',0)">
           + Adicionar
         </button>
+
       </div>
+
 
       <div class="product" data-search="love monster 5 carnes">
-        <h3>Love Monster</h3>
-        <p>Pão, 5 carnes, queijo, bacon, tomate, alface, milho, cebola roxa, ovo e molho Love.</p>
-        <div class="price">Consulte o preço</div>
-        <button class="add" onclick="adicionar('Love Monster',0)">
-          + Adicionar
-        </button>
-      </div>
 
-      <div class="product" data-search="batata frita">
-        <h3>Batata Frita</h3>
-        <p>Escolha o tamanho da sua porção.</p>
-        <div class="price">Consulte o preço</div>
-        <button class="add" onclick="adicionar('Batata Frita',0)">
-          + Adicionar
-        </button>
-      </div>
+        <h3>
+          Love Monster
+        </h3>
 
-      <div class="product" data-search="anéis cebola">
-        <h3>Anéis de Cebola</h3>
-        <p>Porção crocante de anéis de cebola.</p>
-        <div class="price">Consulte o preço</div>
-        <button class="add" onclick="adicionar('Anéis de Cebola',0)">
-          + Adicionar
-        </button>
-      </div>
+        <p>
+          Pão, 5 carnes, queijo, bacon, tomate, alface, milho,
+          cebola roxa, ovo e molho Love.
+        </p>
 
-      <div class="product" data-search="nuggets">
-        <h3>Nuggets</h3>
-        <p>Porção de nuggets crocantes.</p>
-        <div class="price">Consulte o preço</div>
-        <button class="add" onclick="adicionar('Nuggets',0)">
-          + Adicionar
-        </button>
-      </div>
+        <div class="price">
+          Consulte o preço
+        </div>
 
-      <div class="product" data-search="coca guaraná bebida">
-        <h3>Bebidas</h3>
-        <p>Coca-Cola, Guaraná, Del Valle, Guaravita e outras opções.</p>
-        <div class="price">Consulte o preço</div>
-        <button class="add" onclick="adicionar('Bebida',0)">
-          + Adicionar
-        </button>
-      </div>
-
-    </div>
-  </section>
-
-  <h2 class="section-title">💜 Por que usar o Pede.Comigo?</h2>
-
-  <section class="features">
-
-    <div class="feature">
-      <strong>🛒 Pedido fácil</strong>
-      Faça seu pedido pelo celular de forma rápida.
-    </div>
-
-    <div class="feature">
-      <strong>📦 Entrega ou retirada</strong>
-      Escolha como quer receber seu pedido.
-    </div>
-
-    <div class="feature">
-      <strong>📲 WhatsApp</strong>
-      Seu pedido é enviado diretamente para a loja.
-    </div>
-
-    <div class="feature">
-      <strong>🏪 Várias lojas</strong>
-      A PedeAí poderá reunir várias lojas em um só lugar.
-    </div>
-
-  </section>
-
-</main>
-
-<footer>
-  <strong>PedeAí</strong><br>
-  Seu pedido, do seu jeito. ❤️
-</footer>
-
-
-<!-- CARRINHO -->
-
-<div class="overlay" id="overlay">
-
-  <div class="cart">
-
-    <div class="cart-top">
-      <h2>🛒 Seu pedido</h2>
-      <button class="close" onclick="fecharCarrinho()">✕</button>
-    </div>
-
-    <div id="listaCarrinho"></div>
-
-    <div class="total">
-      Total: R$ <span id="total">0,00</span>
-    </div>
-
-    <div class="form">
-
-      <input
-        id="nome"
-        type="text"
-        placeholder="Seu nome"
-      >
-
-      <input
-        id="telefone"
-        type="tel"
-        placeholder="Seu telefone"
-      >
-
-      <select id="tipo">
-        <option value="Entrega">🚴 Entrega</option>
-        <option value="Retirada">🏪 Retirar na loja</option>
-      </select>
-
-      <textarea
-        id="endereco"
-        rows="3"
-        placeholder="Endereço para entrega"
-      ></textarea>
-
-      <button class="whatsapp" onclick="enviarPedido()">
-        📲 Enviar pedido pelo WhatsApp
-      </button>
-
-    </div>
-
-  </div>
-
-</div>
-
-
-<script>
-
-let carrinho = [];
-
-/* ADICIONAR */
-
-function adicionar(nome, preco){
-
-  const item = carrinho.find(
-    produto => produto.nome === nome
-  );
-
-  if(item){
-    item.quantidade++;
-  }else{
-    carrinho.push({
-      nome:nome,
-      preco:preco,
-      quantidade:1
-    });
-  }
-
-  atualizarCarrinho();
-  abrirCarrinho();
-}
-
-
-/* ATUALIZAR */
-
-function atualizarCarrinho(){
-
-  const lista =
-    document.getElementById("listaCarrinho");
-
-  const contador =
-    document.getElementById("contador");
-
-  const total =
-    document.getElementById("total");
-
-  lista.innerHTML = "";
-
-  let quantidadeTotal = 0;
-  let valorTotal = 0;
-
-  if(carrinho.length === 0){
-
-    lista.innerHTML =
-      '<div class="empty">Seu carrinho está vazio.</div>';
-
-  }
-
-  carrinho.forEach((item,index)=>{
-
-    quantidadeTotal += item.quantidade;
-
-    valorTotal +=
-      item.preco * item.quantidade;
-
-    lista.innerHTML += `
-
-      <div class="cart-item">
-
-        <strong>${item.nome}</strong>
-
-        <small>
-          ${item.preco > 
+        <button class="add"
+          onclick="adicionar('Love Monster',0)">
+          + Ad
