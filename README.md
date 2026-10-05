@@ -1,2 +1,2 @@
-# pedeai
+# Pede.Comigo
 Público
