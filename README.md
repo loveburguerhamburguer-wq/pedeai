@@ -1,2 +1,2 @@
-# Pede.Comigo
+# Pede comigo
 Público
